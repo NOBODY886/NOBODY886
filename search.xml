@@ -19,8 +19,107 @@
 ]]></content>
   </entry>
   <entry>
-    <title>PyTorch</title>
+    <title>配置PyTorch环境</title>
     <url>/posts/71fe.html</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<!--摘要-->
+
+<span id="more"></span>
+
+<h1 id="配置PyTorch环境"><a href="#配置PyTorch环境" class="headerlink" title="配置PyTorch环境"></a>配置PyTorch环境</h1><h2 id="安装ANACONDA"><a href="#安装ANACONDA" class="headerlink" title="安装ANACONDA"></a>安装ANACONDA</h2><ol>
+<li><p>勾选add PATH</p>
+</li>
+<li><p>验证安装是否成功</p>
+<p>cmd中</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">conda list</span><br><span class="line">conda --version</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="安装CUDA"><a href="#安装CUDA" class="headerlink" title="安装CUDA"></a>安装CUDA</h2><ol>
+<li>…已安装</li>
+<li>验证是否安装成功</li>
+</ol>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">nvcc -V</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装CUDNN"><a href="#安装CUDNN" class="headerlink" title="安装CUDNN"></a>安装CUDNN</h2><ol>
+<li><p>官网下载对应版本</p>
+</li>
+<li><p>安装包解压缩<br><img data-src="E:\文档与pdf等\blog\hexo-blog\source_posts\PyTorch\image-20230904171530343.png" alt="image-20230904171530343"></p>
+<p><img data-src="E:\文档与pdf等\blog\hexo-blog\source_posts\PyTorch\watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2poc2lnbmFs,size_16,color_FFFFFF,t_70.png" alt="在这里插入图片描述"></p>
+</li>
+<li><p>添加环境变量：系统变量-PATH<br><img data-src="E:\文档与pdf等\blog\hexo-blog\source_posts\PyTorch\image-20230904172344714.png" alt="image-20230904172344714"></p>
+</li>
+<li><p>验证是否安装成功<br><a href="https://blog.csdn.net/jhsignal/article/details/111398427">Windows10检查Cuda和cuDNN是否安装成功？_win +r cmd进入,输入nvcc -v没有用_jhsignal的博客-CSDN博客</a></p>
+</li>
+</ol>
+<h2 id="安装PyTorch"><a href="#安装PyTorch" class="headerlink" title="安装PyTorch"></a>安装PyTorch</h2><ol>
+<li>打开PyTorch官网，按下图选择环境</li>
+</ol>
+<p><img data-src="E:\文档与pdf等\blog\hexo-blog\source_posts\PyTorch\image-20230904182630565.png" alt="image-20230904182630565"></p>
+<ol start="2">
+<li><p>测试是否安装成功</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="built_in">print</span>(torch.__file__)</span><br><span class="line">torch.__version__</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="关于conda"><a href="#关于conda" class="headerlink" title="关于conda"></a>关于conda</h1><ul>
+<li><p>ANCCONDA是一个环境管理软件，可以创建很多虚拟环境，用来跑不同的代码（例如创建python3.7，python3.10，甚至是python2，避免全部安装在一块难以区分）</p>
+</li>
+<li><p>直接pip安装的PyTorch安装在了base环境，在虚拟环境中没有，打算卸载掉base中的安装到虚拟环境中，避免日后麻烦</p>
+</li>
+<li><p>PyTorch卸载</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">pip uninstall torch				#使用pip安装</span><br><span class="line">conda uninstall pytorch			#使用conda安装</span><br><span class="line">conda uninstall libtorch</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建虚拟环境（参考<a href="https://blog.csdn.net/weixin_44789149/article/details/109504715">Pytorch安装，一把辛酸泪！_base和pytorch的python版本不一样_不问来时路的博客-CSDN博客</a>）</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">conda create -n virenv_name python=<span class="number">3</span>.X</span><br></pre></td></tr></table></figure>
+
+<p><code>virenv_name</code>就是这个虚拟环境的名字，后面的<code>3.X</code>就是python的版本号</p>
+</li>
+<li><p>列出所有环境</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">conda env list</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入指定虚拟环境</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">conda activate env_name</span><br></pre></td></tr></table></figure>
+
+<p>在虚拟环境中使用conda install或者pip都可以安装到<strong>此环境</strong></p>
+</li>
+<li><p>pycharm中选择创建的虚拟环境即可</p>
+<p><img data-src="E:\文档与pdf等\blog\hexo-blog\source_posts\PyTorch\image-20230904205420013.png" alt="image-20230904205420013"></p>
+</li>
+<li><p>删除虚拟环境</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda env remove --name your_env_name</span><br></pre></td></tr></table></figure>
+
+<p>your_env_name是对应虚拟环境名</p>
+</li>
+<li></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>PyTorch小知识点</title>
+    <url>/posts/8c43.html</url>
+    <content><![CDATA[<!--摘要-->
+
+<span id="more"></span>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>git常用指令</title>
+    <url>/posts/ea59.html</url>
+    <content><![CDATA[<!--摘要-->
+
+<span id="more"></span>
+
+<ol>
+<li>clone操作</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> ssh仓库地址</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>上传</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .                 <span class="comment">#准备上传当前文件夹所有内容</span></span><br><span class="line">git add 文件名.后缀		 <span class="comment">#只上传某一个文件</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;备注&quot;</span>	    <span class="comment">#提交</span></span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
   </entry>
 </search>
