@@ -7,14 +7,25 @@
 
 <!--<span id="more"></span>-->
 
-<h6 id="上传指令"><a href="#上传指令" class="headerlink" title="上传指令"></a>上传指令</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g			<span class="comment">#生成</span></span><br><span class="line">hexo d			<span class="comment">#部署</span></span><br></pre></td></tr></table></figure>
+<h4 id="上传指令"><a href="#上传指令" class="headerlink" title="上传指令"></a>上传指令</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g			<span class="comment">#生成</span></span><br><span class="line">hexo d			<span class="comment">#部署</span></span><br></pre></td></tr></table></figure>
 
-<h6 id="首页不显示全文"><a href="#首页不显示全文" class="headerlink" title="首页不显示全文"></a>首页不显示全文</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="首页不显示全文"><a href="#首页不显示全文" class="headerlink" title="首页不显示全文"></a>首页不显示全文</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
 
 <p>或者加入summary</p>
-<h6 id="建立新文章"><a href="#建立新文章" class="headerlink" title="建立新文章"></a>建立新文章</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new [layout] <span class="string">&quot;title&quot;</span></span><br><span class="line">hexo n blog名</span><br></pre></td></tr></table></figure>
+<h4 id="建立新文章"><a href="#建立新文章" class="headerlink" title="建立新文章"></a>建立新文章</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new [layout] <span class="string">&quot;title&quot;</span></span><br><span class="line">hexo n blog名</span><br></pre></td></tr></table></figure>
 
+<h4 id="public文件夹"><a href="#public文件夹" class="headerlink" title="public文件夹"></a>public文件夹</h4><p>public文件夹是<code>hexo g</code>之后自动生成的文件夹，类似c++中编译之后的可执行文件</p>
+<p>因此文件放置在public中会被清空</p>
+<p>以images图片为例，正确做法是放在<strong>根目录source</strong>，或<strong>next主题source</strong>下</p>
+<p>这样<code>hexo g</code>之后就能直接自动生成到public&#x2F;images中</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>PyTorch小知识点</title>
+    <url>/posts/8c43.html</url>
+    <content><![CDATA[<!--摘要-->
 
+<span id="more"></span>
 
 ]]></content>
   </entry>
@@ -112,15 +123,6 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;备注&quot;</span>	    <span class="comment">#提交</span></span><br></pre></td></tr></table></figure>
 
 
-
-]]></content>
-  </entry>
-  <entry>
-    <title>PyTorch小知识点</title>
-    <url>/posts/8c43.html</url>
-    <content><![CDATA[<!--摘要-->
-
-<span id="more"></span>
 
 ]]></content>
   </entry>
