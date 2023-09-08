@@ -15,18 +15,9 @@
 <h4 id="建立新文章"><a href="#建立新文章" class="headerlink" title="建立新文章"></a>建立新文章</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new [layout] <span class="string">&quot;title&quot;</span></span><br><span class="line">hexo n blog名</span><br></pre></td></tr></table></figure>
 
 <h4 id="public文件夹"><a href="#public文件夹" class="headerlink" title="public文件夹"></a>public文件夹</h4><p>public文件夹是<code>hexo g</code>之后自动生成的文件夹，类似c++中编译之后的可执行文件</p>
-<p>因此文件放置在public中会被清空</p>
+<p>因此文件放置在public中<code>hexo clean</code>后会被清空</p>
 <p>以images图片为例，正确做法是放在<strong>根目录source</strong>，或<strong>next主题source</strong>下</p>
 <p>这样<code>hexo g</code>之后就能直接自动生成到public&#x2F;images中</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>PyTorch小知识点</title>
-    <url>/posts/8c43.html</url>
-    <content><![CDATA[<!--摘要-->
-
-<span id="more"></span>
-
 ]]></content>
   </entry>
   <entry>
@@ -44,11 +35,11 @@
 <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">conda list</span><br><span class="line">conda --version</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h2 id="安装CUDA"><a href="#安装CUDA" class="headerlink" title="安装CUDA"></a>安装CUDA</h2><ol>
-<li>…已安装</li>
-<li>验证是否安装成功</li>
+<li><p>…已安装</p>
+</li>
+<li><p>验证是否安装成功</p>
+ <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">nvcc -V</span><br></pre></td></tr></table></figure></li>
 </ol>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">nvcc -V</span><br></pre></td></tr></table></figure>
-
 <h2 id="安装CUDNN"><a href="#安装CUDNN" class="headerlink" title="安装CUDNN"></a>安装CUDNN</h2><ol>
 <li><p>官网下载对应版本</p>
 </li>
@@ -121,6 +112,170 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .                 <span class="comment">#准备上传当前文件夹所有内容</span></span><br><span class="line">git add 文件名.后缀		 <span class="comment">#只上传某一个文件</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;备注&quot;</span>	    <span class="comment">#提交</span></span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+  </entry>
+  <entry>
+    <title>PyTorch理论学习记录</title>
+    <url>/posts/d75.html</url>
+    <content><![CDATA[<!--摘要-->
+
+<span id="more"></span>
+
+<h1 id="回归问题"><a href="#回归问题" class="headerlink" title="回归问题"></a>回归问题</h1><h2 id="常用求解器"><a href="#常用求解器" class="headerlink" title="常用求解器"></a>常用求解器</h2><p>sgd，rmsprop，Adam</p>
+<h2 id="损失loss"><a href="#损失loss" class="headerlink" title="损失loss"></a>损失loss</h2><p>$$<br>loss&#x3D;(观测值-测量值)^2<br>$$</p>
+<p>目标是求解尽可能准确的W和b，使得观测值接近y</p>
+<img data-src="/posts/undefined/image-20230905111127451.png" class="" title="image-20230905111127451">
+
+<p>以线性函数为例<br>$$<br>loss&#x3D;\sum_{i}(w*x_i+b-y_i)^2\<br>minimize\enspace loss<br>$$</p>
+<h2 id="梯度下降计算过程"><a href="#梯度下降计算过程" class="headerlink" title="梯度下降计算过程"></a>梯度下降计算过程</h2><p>每一个参数都使用下列公式进行梯度下降计算（得到新的$$w和b$$）<br>$$<br>\theta_1&#x3D;\theta_0-\Delta(\theta_0)*lr\<br>\theta_1&#x3D;\theta_0-\frac{\nabla loss}{\nabla(\theta_0)}*lr<br>$$<br>核心为迭代过程，lr为学习率（learning rate&#x2F;step coefficient），相当于调整步长，常用0.001。</p>
+<blockquote>
+<p>Ps.$$\Delta表示变化量，\nabla表示微分$$</p>
+</blockquote>
+<h1 id="手写体识别问题"><a href="#手写体识别问题" class="headerlink" title="手写体识别问题"></a>手写体识别问题</h1><p>使用Normalize 使数据分布在0附近，识别率更高</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>PyTorch编程语言</title>
+    <url>/posts/8c43.html</url>
+    <content><![CDATA[<!--摘要-->
+
+<span id="more"></span>
+
+<h1 id="变量-Tensor"><a href="#变量-Tensor" class="headerlink" title="变量-Tensor"></a>变量-Tensor</h1><h2 id="对应关系"><a href="#对应关系" class="headerlink" title="对应关系"></a>对应关系</h2> <img data-src="/posts/8c43/image-20230907104440294.png" class="" title="image-20230907104440294">
+
+<img data-src="/posts/8c43/image-20230907110140028.png" class="" title="image-20230907110140028">
+
+<h2 id="数据类型查看"><a href="#数据类型查看" class="headerlink" title="数据类型查看"></a>数据类型查看</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a.<span class="built_in">type</span>()</span><br><span class="line"><span class="built_in">type</span>(a)</span><br><span class="line"><span class="built_in">isinstance</span>(a, torch.FloatTensor)		<span class="comment"># 检验是否为某类型</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="标量表示"><a href="#标量表示" class="headerlink" title="标量表示"></a>标量表示</h2><p>Dimension &#x3D; 0 的量，常用于表示<strong>Loss</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">IN	a = torch.tensor(<span class="number">1.</span>)</span><br><span class="line">OUT	tensor(<span class="number">1.</span>)				<span class="comment"># 必须加.，不然理解为向量维度</span></span><br></pre></td></tr></table></figure>
+
+<p>pytorch中一般不用一维向量表示标量，为了区分清晰</p>
+<h2 id="求变量维度"><a href="#求变量维度" class="headerlink" title="求变量维度"></a>求变量维度</h2><p>四种方法</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = torch.tensor</span><br><span class="line"></span><br><span class="line">IN	a.shape			<span class="comment"># shape是成员，返回size向量</span></span><br><span class="line">OUT	torch.Size([])</span><br><span class="line"></span><br><span class="line">IN	<span class="built_in">len</span>(a.shape)</span><br><span class="line">OUT	<span class="number">0</span></span><br><span class="line"></span><br><span class="line">IN	<span class="built_in">list</span>(a.shape)</span><br><span class="line">OUT [<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">IN	a.size()		<span class="comment"># size为函数</span></span><br><span class="line">OUT	torch.Size([])</span><br></pre></td></tr></table></figure>
+
+<h2 id="向量（张量）表示"><a href="#向量（张量）表示" class="headerlink" title="向量（张量）表示"></a>向量（张量）表示</h2><ol>
+<li><p>方法一</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">IN	torch.tensor([<span class="number">1.1</span>])			<span class="comment"># 一维向量</span></span><br><span class="line">OUT	tensor([<span class="number">1.1000</span>])</span><br><span class="line"></span><br><span class="line">IN	torch.tensor([<span class="number">1.1</span>,<span class="number">2.2</span>])		<span class="comment"># 一行二列</span></span><br><span class="line">OUT	tensor([<span class="number">1.1000</span>,<span class="number">2.2000</span>])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方法二</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.FloatTensor(<span class="number">2</span>)</span><br><span class="line">tensor([<span class="number">3.2239e-25</span>, <span class="number">4.5915e-41</span>])	<span class="comment"># 生成为随机数，二维数据</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方法三</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">IN	data = np.ones(<span class="number">2</span>)		<span class="comment"># 生成初始值为1的二维数据  numpy</span></span><br><span class="line">OUT	array([<span class="number">1.</span>, <span class="number">1.</span>])			<span class="comment"># 不是torch类型</span></span><br><span class="line"></span><br><span class="line">IN	torch.from_numpy(data)	<span class="comment"># </span></span><br><span class="line">OUT	tensor([<span class="number">1.</span>, <span class="number">1.</span>], dtype=torch.float64)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方法四</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = torch.randn(<span class="number">2</span>,<span class="number">3</span>)		<span class="comment">#生成两行三列数据，随机正太分布</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方法五</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = torch.rand(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)		<span class="comment">#随机均匀分布</span></span><br><span class="line"><span class="built_in">list</span>(a.shape)</span><br><span class="line">OUT [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="求维度，数据量"><a href="#求维度，数据量" class="headerlink" title="求维度，数据量"></a>求维度，数据量</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a.numel()			<span class="comment"># 返回矩阵中有多少数据量</span></span><br><span class="line">a.dim()	 			<span class="comment"># 返回矩阵维度</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><ol>
+<li>随机初始化</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.rand(<span class="number">3</span>,<span class="number">3</span>)		<span class="comment"># 生成（0，1）均匀分布数据，数据类型为默认(Float)	</span></span><br><span class="line"></span><br><span class="line">rand_like(a)		<span class="comment"># 仿照某个变量生成</span></span><br><span class="line"></span><br><span class="line">randint(<span class="number">3</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>固定初始化</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.full([<span class="number">2</span>, <span class="number">3</span>], <span class="number">7</span>)		</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="其他实用指令"><a href="#其他实用指令" class="headerlink" title="其他实用指令"></a>其他实用指令</h2><ol>
+<li><p>Tensor和tensor区别</p>
+<p>Tensor默认生成FloatTensor</p>
+<p>tensor只能填入一个变量（作为数值赋值给0维标量）</p>
+</li>
+<li><p>设置默认数据类型</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.set_default_tensor_type(torch.DoubleTensor)</span><br><span class="line">tourch.Tensor(<span class="number">2</span>,<span class="number">2</span>).<span class="built_in">type</span></span><br><span class="line">OUT torch.DoubleTensor</span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<h1 id="维度变化"><a href="#维度变化" class="headerlink" title="维度变化"></a>维度变化</h1><h2 id="unsqueeze-维度增加"><a href="#unsqueeze-维度增加" class="headerlink" title="unsqueeze-维度增加"></a>unsqueeze-维度增加</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a.unsqueeze(<span class="number">0</span>)		<span class="comment"># 在0索引之前插入一个维度</span></span><br><span class="line">a.unsqueeze(-<span class="number">1</span>)		<span class="comment"># 在-1索引之后插入一个维度</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>括号中数字就是插入完成之后的索引</p>
+</blockquote>
+<h2 id="squeeze-维度削减"><a href="#squeeze-维度削减" class="headerlink" title="squeeze-维度削减"></a>squeeze-维度削减</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a.unsqueeze(<span class="number">0</span>)		<span class="comment"># 削减0索引维度</span></span><br><span class="line">a.unsqueeze(-<span class="number">1</span>)		<span class="comment"># 削减-1索引维度</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">b.squeeze()			<span class="comment"># 挤压掉所有1维</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>squeeze只能挤压1维，若不是1维则无效</p>
+</blockquote>
+<h2 id="expand-维度拓展"><a href="#expand-维度拓展" class="headerlink" title="expand-维度拓展"></a>expand-维度拓展</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">b.expand(<span class="number">4</span>,<span class="number">32</span>,<span class="number">14</span>,<span class="number">14</span>)	<span class="comment"># 第一个索引拷贝到4维，第二个不变(32)，第三个第四个拷贝到14</span></span><br></pre></td></tr></table></figure>
+
+<img data-src="/posts/8c43/image-20230908171547596.png" class="" title="image-20230908171547596">
+
+<p>参数填入-1则表示该维度不变</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">b.expand_as(a)		<span class="comment"># 按照a维度进行拓展</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="repeat-维度拷贝"><a href="#repeat-维度拷贝" class="headerlink" title="repeat-维度拷贝"></a>repeat-维度拷贝</h2><p>与expand类似</p>
+<p>填入参数表示拷贝次数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">b.repert(<span class="number">4</span>,<span class="number">32</span>,<span class="number">1</span>,<span class="number">1</span>)		<span class="comment"># 第一个索引重复拷贝4次，第二个32次，第三第四1次</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="transpose-维度互换"><a href="#transpose-维度互换" class="headerlink" title="transpose-维度互换"></a>transpose-维度互换</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a.transpose(<span class="number">1</span>,<span class="number">3</span>)		<span class="comment"># 第一索引，第三索引互换</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="permute-多维度互换"><a href="#permute-多维度互换" class="headerlink" title="permute-多维度互换"></a>permute-多维度互换</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">b.permute(<span class="number">0</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>)		<span class="comment"># 按照输入参数重新排列矩阵</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="broadcast自动拓展"><a href="#broadcast自动拓展" class="headerlink" title="broadcast自动拓展"></a>broadcast自动拓展</h2><ul>
+<li>自动拓展</li>
+<li>不需要拷贝一份备份（节约内存）（对比repeat和expand）</li>
+</ul>
+<h1 id="拼接与拆分"><a href="#拼接与拆分" class="headerlink" title="拼接与拆分"></a>拼接与拆分</h1><h2 id="cat-原维度进行拼接"><a href="#cat-原维度进行拼接" class="headerlink" title="cat-原维度进行拼接"></a>cat-原维度进行拼接</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.cat([a,b],dim=<span class="number">0</span>)		<span class="comment"># 在0维上进行拼接</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="stack-加入新维度进行拼接"><a href="#stack-加入新维度进行拼接" class="headerlink" title="stack-加入新维度进行拼接"></a>stack-加入新维度进行拼接</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.stack([a,b],dim=<span class="number">0</span>)	<span class="comment"># 在0维上新建一个维度拼接</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>a，b必须保持同维度</p>
+</blockquote>
+<h2 id="split-拆分"><a href="#split-拆分" class="headerlink" title="split-拆分"></a>split-拆分</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">aa, bb = c.split([<span class="number">2</span>,<span class="number">1</span>], dim=<span class="number">0</span>)	<span class="comment">#按0维长度拆分，aa拆分得到2个长度，bb拆分得到后面1个长度</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
