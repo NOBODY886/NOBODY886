@@ -95,6 +95,26 @@
 ]]></content>
   </entry>
   <entry>
+    <title>PyTorch理论学习记录</title>
+    <url>/posts/d75.html</url>
+    <content><![CDATA[<!--摘要-->
+
+<span id="more"></span>
+
+<h1 id="回归问题"><a href="#回归问题" class="headerlink" title="回归问题"></a>回归问题</h1><h2 id="常用求解器"><a href="#常用求解器" class="headerlink" title="常用求解器"></a>常用求解器</h2><p>sgd，rmsprop，Adam</p>
+<h2 id="损失loss"><a href="#损失loss" class="headerlink" title="损失loss"></a>损失loss</h2><p>$$<br>loss&#x3D;(观测值-测量值)^2<br>$$</p>
+<p>目标是求解尽可能准确的W和b，使得观测值接近y</p>
+<img data-src="/posts/d75/image-20230905111127451.png" class="" title="image-20230905111127451">
+
+<p>以线性函数为例<br>$$<br>loss&#x3D;\sum_{i}(w*x_i+b-y_i)^2\<br>minimize\enspace loss<br>$$</p>
+<h2 id="梯度下降计算过程"><a href="#梯度下降计算过程" class="headerlink" title="梯度下降计算过程"></a>梯度下降计算过程</h2><p>每一个参数都使用下列公式进行梯度下降计算（得到新的$$w和b$$）<br>$$<br>\theta_1&#x3D;\theta_0-\Delta(\theta_0)*lr\<br>\theta_1&#x3D;\theta_0-\frac{\nabla loss}{\nabla(\theta_0)}*lr<br>$$<br>核心为迭代过程，lr为学习率（learning rate&#x2F;step coefficient），相当于调整步长，常用0.001。</p>
+<blockquote>
+<p>Ps.$$\Delta表示变化量，\nabla表示微分$$</p>
+</blockquote>
+<h1 id="手写体识别问题"><a href="#手写体识别问题" class="headerlink" title="手写体识别问题"></a>手写体识别问题</h1><p>使用Normalize 使数据分布在0附近，识别率更高</p>
+]]></content>
+  </entry>
+  <entry>
     <title>git常用指令</title>
     <url>/posts/ea59.html</url>
     <content><![CDATA[<!--摘要-->
@@ -118,23 +138,25 @@
 ]]></content>
   </entry>
   <entry>
-    <title>PyTorch理论学习记录</title>
-    <url>/posts/d75.html</url>
+    <title>ps修图技巧</title>
+    <url>/posts/37d8.html</url>
     <content><![CDATA[<!--摘要-->
 
 <span id="more"></span>
 
-<h1 id="回归问题"><a href="#回归问题" class="headerlink" title="回归问题"></a>回归问题</h1><h2 id="常用求解器"><a href="#常用求解器" class="headerlink" title="常用求解器"></a>常用求解器</h2><p>sgd，rmsprop，Adam</p>
-<h2 id="损失loss"><a href="#损失loss" class="headerlink" title="损失loss"></a>损失loss</h2><p>$$<br>loss&#x3D;(观测值-测量值)^2<br>$$</p>
-<p>目标是求解尽可能准确的W和b，使得观测值接近y</p>
-<img data-src="/posts/undefined/image-20230905111127451.png" class="" title="image-20230905111127451">
-
-<p>以线性函数为例<br>$$<br>loss&#x3D;\sum_{i}(w*x_i+b-y_i)^2\<br>minimize\enspace loss<br>$$</p>
-<h2 id="梯度下降计算过程"><a href="#梯度下降计算过程" class="headerlink" title="梯度下降计算过程"></a>梯度下降计算过程</h2><p>每一个参数都使用下列公式进行梯度下降计算（得到新的$$w和b$$）<br>$$<br>\theta_1&#x3D;\theta_0-\Delta(\theta_0)*lr\<br>\theta_1&#x3D;\theta_0-\frac{\nabla loss}{\nabla(\theta_0)}*lr<br>$$<br>核心为迭代过程，lr为学习率（learning rate&#x2F;step coefficient），相当于调整步长，常用0.001。</p>
-<blockquote>
-<p>Ps.$$\Delta表示变化量，\nabla表示微分$$</p>
-</blockquote>
-<h1 id="手写体识别问题"><a href="#手写体识别问题" class="headerlink" title="手写体识别问题"></a>手写体识别问题</h1><p>使用Normalize 使数据分布在0附近，识别率更高</p>
+<h1 id="肤色增白"><a href="#肤色增白" class="headerlink" title="肤色增白"></a>肤色增白</h1><ol>
+<li><p>混色器橙色色相提高</p>
+<img data-src="ps修图技巧/image-20230909125913042.png" alt="image-20230909125913042" style="zoom:67%;" />
+</li>
+<li><p>饱和度橙色、黄色下降</p>
+<img data-src="ps修图技巧/image-20230909130006828.png" alt="image-20230909130006828" style="zoom:67%;" />
+</li>
+<li><p>明亮度橙色、黄色提升</p>
+<img data-src="ps修图技巧/image-20230909130032048.png" alt="image-20230909130032048" style="zoom: 67%;" />
+</li>
+<li><p>室外拍摄有绿叶的话，拉一点自然饱和度肤色更加自然，红润</p>
+<img data-src="ps修图技巧/image-20230909130942609.png" alt="image-20230909130942609" style="zoom:67%;" /></li>
+</ol>
 ]]></content>
   </entry>
   <entry>
@@ -237,7 +259,29 @@
 <blockquote>
 <p>a，b必须保持同维度</p>
 </blockquote>
-<h2 id="split-拆分"><a href="#split-拆分" class="headerlink" title="split-拆分"></a>split-拆分</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">aa, bb = c.split([<span class="number">2</span>,<span class="number">1</span>], dim=<span class="number">0</span>)	<span class="comment">#按0维长度拆分，aa拆分得到2个长度，bb拆分得到后面1个长度</span></span><br></pre></td></tr></table></figure>
+<h2 id="split-按长度拆分"><a href="#split-按长度拆分" class="headerlink" title="split-按长度拆分"></a>split-按长度拆分</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">aa, bb = c.split([<span class="number">2</span>,<span class="number">1</span>], dim=<span class="number">0</span>)	<span class="comment">#按0维长度拆分，aa拆分得到2个长度，bb拆分得到后面1个长度</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="chunk-按数量拆分"><a href="#chunk-按数量拆分" class="headerlink" title="chunk-按数量拆分"></a>chunk-按数量拆分</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">aa, bb = c.chunk(<span class="number">2</span>, dim=<span class="number">0</span>)	<span class="comment"># 把c拆分成两块，一般是对半分</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="数学运算"><a href="#数学运算" class="headerlink" title="数学运算"></a>数学运算</h1><h2 id="matmul-矩阵乘法"><a href="#matmul-矩阵乘法" class="headerlink" title="matmul-矩阵乘法"></a>matmul-矩阵乘法</h2><img data-src="pytorch小知识点/image-20230911103801694.png" alt="image-20230911103801694" style="zoom:67%;" />
+
+<h2 id="clamp-裁剪"><a href="#clamp-裁剪" class="headerlink" title="clamp-裁剪"></a>clamp-裁剪</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a.clamp(<span class="number">10</span>)		<span class="comment"># 将矩阵中最小值变为10</span></span><br><span class="line">a.clamp(<span class="number">0</span>, <span class="number">10</span>)	<span class="comment"># 将值限制在0，10之间</span></span><br></pre></td></tr></table></figure>
+
+<p>常用于梯度爆炸裁剪，梯度在10左右正常，10**3属于很大了</p>
+<h1 id="属性统计"><a href="#属性统计" class="headerlink" title="属性统计"></a>属性统计</h1><h2 id="norm-求范数"><a href="#norm-求范数" class="headerlink" title="norm-求范数"></a>norm-求范数</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a.norm(<span class="number">2</span>, dim=<span class="number">0</span>)	<span class="comment"># 在0维上取2范数</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="argmax-求最值索引"><a href="#argmax-求最值索引" class="headerlink" title="argmax-求最值索引"></a>argmax-求最值索引</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a.argamx()			<span class="comment"># 将a转换成一维向量，返回最大值所在的索引</span></span><br><span class="line">a.argamx(dim=<span class="number">1</span>)		<span class="comment"># 返回1维下的最大值坐标</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="max-求最大值"><a href="#max-求最大值" class="headerlink" title="max-求最大值"></a>max-求最大值</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a.<span class="built_in">max</span>(dim=<span class="number">1</span>)		<span class="comment"># 返回值与值所在的索引</span></span><br></pre></td></tr></table></figure>
+
+<p>包含argmax</p>
+<h2 id="keepdim-求最大值，保持维度信息"><a href="#keepdim-求最大值，保持维度信息" class="headerlink" title="keepdim-求最大值，保持维度信息"></a>keepdim-求最大值，保持维度信息</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a.<span class="built_in">max</span>(dim=<span class="number">1</span>, keepdim=<span class="literal">True</span>)	<span class="comment"># 返回的行与原矩阵相同，列变为1</span></span><br></pre></td></tr></table></figure>
+
+
+
+
 
 
 
