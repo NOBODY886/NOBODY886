@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo常用指令</title>
-    <url>/posts/d7d8.html</url>
-    <content><![CDATA[<!--记录一些常用指令-->
+    <title>Docker学习记录</title>
+    <url>/posts/c06e.html</url>
+    <content><![CDATA[<!--摘要-->
 
-<!--<span id="more"></span>-->
+<span id="more"></span>
 
-<h4 id="上传指令"><a href="#上传指令" class="headerlink" title="上传指令"></a>上传指令</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g			<span class="comment">#生成</span></span><br><span class="line">hexo d			<span class="comment">#部署</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="首页不显示全文"><a href="#首页不显示全文" class="headerlink" title="首页不显示全文"></a>首页不显示全文</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
-
-<p>或者加入summary</p>
-<h4 id="建立新文章"><a href="#建立新文章" class="headerlink" title="建立新文章"></a>建立新文章</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new [layout] <span class="string">&quot;title&quot;</span></span><br><span class="line">hexo n blog名</span><br></pre></td></tr></table></figure>
-
-<h4 id="public文件夹"><a href="#public文件夹" class="headerlink" title="public文件夹"></a>public文件夹</h4><p>public文件夹是<code>hexo g</code>之后自动生成的文件夹，类似c++中编译之后的可执行文件</p>
-<p>因此文件放置在public中<code>hexo clean</code>后会被清空</p>
-<p>以images图片为例，正确做法是放在<strong>根目录source</strong>，或<strong>next主题source</strong>下</p>
-<p>这样<code>hexo g</code>之后就能直接自动生成到public&#x2F;images中</p>
-]]></content>
+<h1 id="Docker安装"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker安装</h1><h1 id="Docker命令"><a href="#Docker命令" class="headerlink" title="Docker命令"></a>Docker命令</h1><h2 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h2><h2 id="容器命令"><a href="#容器命令" class="headerlink" title="容器命令"></a>容器命令</h2><h2 id="操作命令"><a href="#操作命令" class="headerlink" title="操作命令"></a>操作命令</h2><h1 id="Docker镜像"><a href="#Docker镜像" class="headerlink" title="Docker镜像"></a>Docker镜像</h1><h1 id="容器数据卷"><a href="#容器数据卷" class="headerlink" title="容器数据卷"></a>容器数据卷</h1><h1 id="DockerFile"><a href="#DockerFile" class="headerlink" title="DockerFile"></a>DockerFile</h1><h1 id="Docker网络原理"><a href="#Docker网络原理" class="headerlink" title="Docker网络原理"></a>Docker网络原理</h1><h1 id="IDEA整合Docker"><a href="#IDEA整合Docker" class="headerlink" title="IDEA整合Docker"></a>IDEA整合Docker</h1>]]></content>
   </entry>
   <entry>
     <title>配置PyTorch环境</title>
@@ -95,6 +84,26 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Hexo常用指令</title>
+    <url>/posts/d7d8.html</url>
+    <content><![CDATA[<!--记录一些常用指令-->
+
+<!--<span id="more"></span>-->
+
+<h4 id="上传指令"><a href="#上传指令" class="headerlink" title="上传指令"></a>上传指令</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g			<span class="comment">#生成</span></span><br><span class="line">hexo d			<span class="comment">#部署</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="首页不显示全文"><a href="#首页不显示全文" class="headerlink" title="首页不显示全文"></a>首页不显示全文</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
+
+<p>或者加入summary</p>
+<h4 id="建立新文章"><a href="#建立新文章" class="headerlink" title="建立新文章"></a>建立新文章</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new [layout] <span class="string">&quot;title&quot;</span></span><br><span class="line">hexo n blog名</span><br></pre></td></tr></table></figure>
+
+<h4 id="public文件夹"><a href="#public文件夹" class="headerlink" title="public文件夹"></a>public文件夹</h4><p>public文件夹是<code>hexo g</code>之后自动生成的文件夹，类似c++中编译之后的可执行文件</p>
+<p>因此文件放置在public中<code>hexo clean</code>后会被清空</p>
+<p>以images图片为例，正确做法是放在<strong>根目录source</strong>，或<strong>next主题source</strong>下</p>
+<p>这样<code>hexo g</code>之后就能直接自动生成到public&#x2F;images中</p>
+]]></content>
+  </entry>
+  <entry>
     <title>PyTorch理论学习记录</title>
     <url>/posts/d75.html</url>
     <content><![CDATA[<!--摘要-->
@@ -112,6 +121,96 @@
 <p>Ps.$$\Delta表示变化量，\nabla表示微分$$</p>
 </blockquote>
 <h1 id="手写体识别问题"><a href="#手写体识别问题" class="headerlink" title="手写体识别问题"></a>手写体识别问题</h1><p>使用Normalize 使数据分布在0附近，识别率更高</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>SolidWorks学习记录</title>
+    <url>/posts/24f.html</url>
+    <content><![CDATA[<!--记录一些常用指令-->
+
+<span id="more"></span>
+
+<h2 id="草图"><a href="#草图" class="headerlink" title="草图"></a>草图</h2><h3 id="构造线"><a href="#构造线" class="headerlink" title="构造线"></a>构造线</h3><p>直线可作为构造线，两个圆关于构造线对称</p>
+<p><img data-src="SolidWorks学习记录/image-20240119170734599.png" alt="image-20240119170734599" style="zoom:120%;" /><img data-src="SolidWorks学习记录/image-20240119170742178.png" alt="image-20240119170742178" style="zoom: 50%;" /></p>
+<img data-src="/posts/undefined/image-20240119170855313.png" class="" title="image-20240119170855313">
+
+<p>同步变化</p>
+<img data-src="/posts/undefined/image-20240119171146460.png" class="" title="image-20240119171146460">
+
+<blockquote>
+<p>直线（实线）不能作为构造线（完成对称），选择作为构造线之后才可完成对称</p>
+</blockquote>
+<h2 id="零件"><a href="#零件" class="headerlink" title="零件"></a>零件</h2><h3 id="转换实体引用"><a href="#转换实体引用" class="headerlink" title="转换实体引用"></a>转换实体引用</h3><ol>
+<li><p>首先要在某个面的<strong>草图绘制</strong>状态</p>
+</li>
+<li><p>然后可以将<strong>其他面的线</strong>提取到该草图面上成为<strong>线</strong></p>
+</li>
+</ol>
+<h3 id="拉伸凸台"><a href="#拉伸凸台" class="headerlink" title="拉伸凸台"></a>拉伸凸台</h3><ol>
+<li>需要在<strong>草图绘制</strong>状态下</li>
+<li>需要有<strong>轮廓线</strong>（粗实线），没有的话选择<strong>转换实体引用</strong>一下</li>
+<li>同一个草图中<strong>多个封闭曲线</strong>情况，可以使用<strong>所选轮廓</strong>来实现指定拉伸切除</li>
+</ol>
+<p><strong>草图线段和实体轮廓要加以区分</strong></p>
+<img data-src="/posts/undefined/image-20240122191256581.png" class="" title="image-20240122191256581">
+
+
+
+<h3 id="基准面"><a href="#基准面" class="headerlink" title="基准面"></a>基准面</h3><img data-src="/posts/undefined/image-20240122153125619.png" class="" title="image-20240122153125619">
+
+
+
+<h3 id="扫描"><a href="#扫描" class="headerlink" title="扫描"></a>扫描</h3><ol>
+<li><p>选择一条螺旋线(可用曲线实现）</p>
+<img data-src="/posts/undefined/image-20240122155920511.png" class="" title="image-20240122155920511">
+</li>
+<li><p>扫描可绘制一个弹簧</p>
+</li>
+</ol>
+<h3 id="设置参考基准面"><a href="#设置参考基准面" class="headerlink" title="设置参考基准面"></a>设置参考基准面</h3><p>要先退出草图模式</p>
+<img data-src="/posts/undefined/image-20240122155902603.png" class="" title="image-20240122155902603">
+
+<img data-src="SolidWorks学习记录/image-20240122160236681.png" alt="image-20240122160236681" style="zoom:50%;" />
+
+<h3 id="移动旋转草图"><a href="#移动旋转草图" class="headerlink" title="移动旋转草图"></a>移动旋转草图</h3><p>工具-草图工具-移动&#x2F;旋转</p>
+<h3 id="裁剪实体"><a href="#裁剪实体" class="headerlink" title="裁剪实体"></a>裁剪实体</h3><p>可用于延长直线</p>
+<p>强劲裁剪+shift</p>
+<h2 id="装配体"><a href="#装配体" class="headerlink" title="装配体"></a>装配体</h2><h3 id="编辑零部件"><a href="#编辑零部件" class="headerlink" title="编辑零部件"></a>编辑零部件</h3><p>方法1：</p>
+<img data-src="/posts/undefined/image-20240123114215195.png" class="" title="image-20240123114215195">
+
+<p>方法2：</p>
+<img data-src="/posts/undefined/image-20240123114143159.png" class="" title="image-20240123114143159">
+
+<h3 id="配合"><a href="#配合" class="headerlink" title="配合"></a>配合</h3><p>宽度配合：选择四个面，中轴线重合</p>
+<p>距离配合：在一定距离内移动</p>
+<p>角度配合：在一定角度内旋转</p>
+<h3 id="隐藏与压缩"><a href="#隐藏与压缩" class="headerlink" title="隐藏与压缩"></a>隐藏与压缩</h3><p>隐藏只是看不见</p>
+<p>压缩直接暂时去除图形或操作，变为灰色</p>
+<h2 id="工程图"><a href="#工程图" class="headerlink" title="工程图"></a>工程图</h2><h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><ol>
+<li><p>正视草图：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CTRL+8</span><br></pre></td></tr></table></figure>
+<p>前视图</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CTRL+1</span><br></pre></td></tr></table></figure>
+<p>顶视图</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CTRL+5</span><br></pre></td></tr></table></figure></li>
+<li><p>重建：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CTRL+B</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>构造线：绘制直线完成后鼠标不动</p>
+</li>
+</ol>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Alt+C</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><p>左键：拖动零件</p>
+<p>右键：旋转零件</p>
+</li>
+<li><p>切换文档：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CTRL+Tab</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>复制零件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CTRL+鼠标左键</span><br></pre></td></tr></table></figure></li>
+</ol>
 ]]></content>
   </entry>
   <entry>
@@ -135,28 +234,6 @@
 
 
 
-]]></content>
-  </entry>
-  <entry>
-    <title>ps修图技巧</title>
-    <url>/posts/37d8.html</url>
-    <content><![CDATA[<!--摘要-->
-
-<span id="more"></span>
-
-<h1 id="肤色增白"><a href="#肤色增白" class="headerlink" title="肤色增白"></a>肤色增白</h1><ol>
-<li><p>混色器橙色色相提高</p>
-<img data-src="ps修图技巧/image-20230909125913042.png" alt="image-20230909125913042" style="zoom:67%;" />
-</li>
-<li><p>饱和度橙色、黄色下降</p>
-<img data-src="ps修图技巧/image-20230909130006828.png" alt="image-20230909130006828" style="zoom:67%;" />
-</li>
-<li><p>明亮度橙色、黄色提升</p>
-<img data-src="ps修图技巧/image-20230909130032048.png" alt="image-20230909130032048" style="zoom: 67%;" />
-</li>
-<li><p>室外拍摄有绿叶的话，拉一点自然饱和度肤色更加自然，红润</p>
-<img data-src="ps修图技巧/image-20230909130942609.png" alt="image-20230909130942609" style="zoom:67%;" /></li>
-</ol>
 ]]></content>
   </entry>
   <entry>
@@ -279,50 +356,124 @@
 <p>包含argmax</p>
 <h2 id="keepdim-求最大值，保持维度信息"><a href="#keepdim-求最大值，保持维度信息" class="headerlink" title="keepdim-求最大值，保持维度信息"></a>keepdim-求最大值，保持维度信息</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a.<span class="built_in">max</span>(dim=<span class="number">1</span>, keepdim=<span class="literal">True</span>)	<span class="comment"># 返回的行与原矩阵相同，列变为1</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="eq-比较矩阵是否相等"><a href="#eq-比较矩阵是否相等" class="headerlink" title="eq-比较矩阵是否相等"></a>eq-比较矩阵是否相等</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.eq(a,b)		<span class="comment"># 比较每个位置上是否相等</span></span><br></pre></td></tr></table></figure>
 
+<h1 id="高阶操作"><a href="#高阶操作" class="headerlink" title="高阶操作"></a>高阶操作</h1><h2 id="where-类eq语法"><a href="#where-类eq语法" class="headerlink" title="where-类eq语法"></a>where-类eq语法</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">r = torch.where(condition, x, y)	<span class="comment"># 输出0，1矩阵</span></span><br></pre></td></tr></table></figure>
 
+<img data-src="/posts/8c43/image-20231011201631123.png" class="" title="image-20231011201631123">
 
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">c = r*a		<span class="comment"># 快速赋值</span></span><br></pre></td></tr></table></figure>
 
+<blockquote>
+<p>并行运算，方便使用GPU加速</p>
+</blockquote>
+<h2 id="gather-？？"><a href="#gather-？？" class="headerlink" title="gather-？？"></a>gather-？？</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.gather(<span class="built_in">input</span>, dim, index, out=<span class="literal">None</span>)</span><br><span class="line"><span class="comment"># input为矩阵（一般为表），dim表示在哪个维度上操作，</span></span><br></pre></td></tr></table></figure>
 
+<p>类似重新排列？</p>
+<blockquote>
+<p>并行运算，方便使用GPU加速</p>
+</blockquote>
+<h1 id="激活函数与梯度"><a href="#激活函数与梯度" class="headerlink" title="激活函数与梯度"></a>激活函数与梯度</h1><h2 id="ReLU"><a href="#ReLU" class="headerlink" title="ReLU"></a>ReLU</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.nn <span class="keyword">import</span> functional <span class="keyword">as</span> F</span><br><span class="line">torch.relu(a)		<span class="comment"># 用法一</span></span><br><span class="line">F.relu(a)			<span class="comment"># 用法二</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="求解梯度"><a href="#求解梯度" class="headerlink" title="求解梯度"></a>求解梯度</h2><h3 id="autograd-grad"><a href="#autograd-grad" class="headerlink" title="autograd.grad"></a>autograd.grad</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.autograd.grad(loss,[w1,w2])</span><br></pre></td></tr></table></figure>
 
+<p>返回[w1 grad, w2 grad …]</p>
+<h3 id="loss-backward"><a href="#loss-backward" class="headerlink" title="loss.backward()"></a>loss.backward()</h3><p>没有返回，直接赋值w1.grad，w2.grad</p>
+<p><strong>ps. 需要提前确定需要梯度的变量</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">w.requires_grad_()</span><br></pre></td></tr></table></figure>
 
+<h2 id="Softmax"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax</h2><h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
+  </entry>
+  <entry>
+    <title>随手记</title>
+    <url>/posts/9249.html</url>
+    <content><![CDATA[<!--摘要-->
 
+<span id="more"></span>
 
+<h6 id="致动器方面可改进"><a href="#致动器方面可改进" class="headerlink" title="致动器方面可改进"></a>致动器方面可改进</h6><ul>
+<li><strong>气动和液压执行器</strong>可以设计为产生任意大力和大位移的组合，但它们的带宽很小（几赫兹），并且随着尺寸的增加而减小。</li>
+<li>相比之下，在另一个极端，<strong>压电致动器</strong>可以在大带宽（数百MHz及以上）上运行并产生很大的力，但位移很小，通常是微米，除非体现在步进电机装置中。</li>
+<li>相比之下，<strong>介电弹性体致动器（DEA）</strong>在这个三维空间中占据了一个更有限的区域，在高达∼1 kHz的频率下产生小力，但位移为毫米到厘米，这是触觉和软机器人的一系列兴趣。</li>
+</ul>
+<blockquote>
+<p>压电致动器，Ozaki，飞行时间延长</p>
+<p>DEA致动器，Hsiao，加入射频</p>
+</blockquote>
+<p>问题：</p>
+<ol>
+<li>压电致动器定制，贵</li>
+<li>自制，缺少设备和技术基础，但是国外研究院校的标配</li>
+<li>传动结构设计与制造</li>
+</ol>
+<blockquote>
+<p>要做什么等级的？亚克级？</p>
+</blockquote>
+<h6 id="复杂动作控制"><a href="#复杂动作控制" class="headerlink" title="复杂动作控制"></a>复杂动作控制</h6><blockquote>
+<p>碰撞规避，翻滚等复杂动作实现</p>
+</blockquote>
+<p>$$\mathbf{Z}<em>{t,m}\sim\mathcal{W}(\mathbf{X}</em>{t,m}^{‘},\mathbf{p}) \quad \mathbf{p}\in(0,1)^{m}$$</p>
+<p>$$\mathop{argmin}\limits_{\beta}{\Arrowvert f-g \Arrowvert_2^2+\underbrace{(1-\alpha)\lambda\sqrt{p_q}\sum\limits_{q&#x3D;1}^Q\Arrowvert\boldsymbol{\beta}<em>q\Arrowvert_2}</em>{Group\ Sparsity}+\underbrace{\alpha\lambda\Arrowvert\boldsymbol{\beta}\Arrowvert_1}_{Feature\ Sparsity}}$$</p>
+<p>$$\boldsymbol{\beta}&#x3D;(\boldsymbol{\beta}_1…\boldsymbol{\beta}_Q)$$</p>
+<p>$$DA_k(\mathbf{x},f)&#x3D;f(\mathbf{x}|modify(k))$$</p>
+<p>$$MAZ(\beta)&#x3D;\int_0^1h(x)$$</p>
+<p>$$\frac{1}{K}\Arrowvert{top(\beta^1)\cap top(\beta^2)…\cap top(\beta^n)}\Arrowvert_1$$</p>
+<p>飞行机器人的自主飞行控制是非常重要的。FWAVs飞行控制领域已有一些研究成果。将理论分析和实验研究16相结合，提出FWAVs飞行能力的来源以及各种参数对飞行控制的影响。综述了FWAV的飞行动力学、稳定性和控制17、18的各种分析。建立了一个典型蜂鸟的六自由度非线性时变动力学模型进行仿真研究。19他们使用平均理论和准稳态假设来设计自适应控制器。开发了一种高保真度的微型FWAV非线性时间周期动力学模型20，并对其轨迹跟踪进行了仿真，验证了模型的正确性。除了理论研究外，还进行了许多实验研究21、22来发展FWAV的空气动力学，使用了一个微型六分量力传感器和粒子图像测速仪（PIV）测量来研究空气动力学特性。此外，还提出了FWAV系统23的基于不确定性和扰动估计器（UDE）的输出反馈控制，该控制只需部分了解系统参数即可获得近似的对象模型。提出了基于准稳态气动理论的FWAV动力学模型和相应的饱和反馈控制器24。通过数值模拟和原型实验对它们进行了验证。利用边界控制开发的轨迹跟踪控制算法25用于调节机翼弯曲和扭曲时的位移，以跟踪两个时空变化的轨迹。此外，原型机的性能对实际飞行控制效果至关重要。为了提高FWAV的机动性和灵活性，使用边界控制方法来控制双连杆刚性柔性机翼26。这种方法可以抑制机翼柔性连杆弯曲和扭曲偏转的振动，并实现机翼所需的角位置，大大提高了飞机的控制能力。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>隐私计算</title>
+    <url>/posts/d221.html</url>
+    <content><![CDATA[<!--摘要-->
 
+<span id="more"></span>
 
+<h1 id="多方安全计算"><a href="#多方安全计算" class="headerlink" title="多方安全计算"></a>多方安全计算</h1><p>第一类是以多方安全计算为代表的基于密码学的隐私计算技术。</p>
+<h2 id="多方安全计算-1"><a href="#多方安全计算-1" class="headerlink" title="多方安全计算"></a>多方安全计算</h2><p>Secure Multi-party Computation, MPC</p>
+<p>综合应用多种密码学工具构造多方安全计算协议，除混淆电路、秘密分享、 不经意传输等密码学原理外，其它所有用于实现多方安全计算的密码学算法都可以构成多方安全计算协议（同态加密、零知识证明等）。多方安全计算可在各方不泄露输入数据的前提下完成多方协同分析、处理和结果发布。多方安全计算当前应用实践中性能问题较突出，仅适合应用于小规模数据量场景，MPC的协议与工程优化在持续深入，硬件加速是未来方向。</p>
+<h2 id="混淆电路"><a href="#混淆电路" class="headerlink" title="混淆电路"></a>混淆电路</h2><p>Garbled Circuit, GC</p>
+<p>使用布尔电路构造安全函数计算，保证一方输入不会泄露给其它方，计算出结果，并能指定结果由哪方获得或者是两方以分片形式共有。</p>
+<h2 id="秘密分享"><a href="#秘密分享" class="headerlink" title="秘密分享"></a>秘密分享</h2><p>Secret Sharing, SS</p>
+<p>是指将秘密信息拆分成若干分片，由若干参与者分别保存，并且通过参与者的合作，对分布式存储的各分片进行安全计算，全部分片或达到门限数的分片根据多个份额可重新恢复秘密信息。</p>
+<h2 id="不经意传输"><a href="#不经意传输" class="headerlink" title="不经意传输"></a>不经意传输</h2><p>Oblivious Transfer,  OT</p>
+<p>指数据发送方有n个数据，数据接收方接收其选定的一个数据，且不能获取其它数据，同时数据发送方无法知道接收方的选择。</p>
+<h2 id="同态加密"><a href="#同态加密" class="headerlink" title="同态加密"></a>同态加密</h2><p>Homomorphic Encryption, HE</p>
+<p>能实现在密文上进行计算后对输出进行解密，得到的结果和直接对明文计算的结果一致，包括半同态加密和全同态加密算法。同态加密算法已在多方安全计算、联邦学习、区块链等存在数据隐私计算需求的场景落地应用。</p>
+<h2 id="差分隐私"><a href="#差分隐私" class="headerlink" title="差分隐私"></a>差分隐私</h2><p>Differential Privacy, DP</p>
+<p>技术是针对数据库的隐私泄露问题提出的一种新型密码学手段。该机制是在源数据或计算结果上添加特定分布的噪音，确保各参与方无法通过得到的数据分析出数据集中是否包含某一特定实体。差分隐私包括本地差分隐私和计算结果差分隐私。本地差分隐私指在汇聚和计算前数据就加入噪声，用于数据收集方不可信的场景；计算结果差分隐私是指最终计算结果发布前对其加噪声。</p>
+<h2 id="零知识证明"><a href="#零知识证明" class="headerlink" title="零知识证明"></a>零知识证明</h2><p>Zero-Knowledge Proof, ZKP</p>
+<p>指的是证明者能够在不向验证者泄露任何有用信息的情况下，使验证者相信某个论断是正确的。零知识证明是一种两方或者多方的协议，两方或多方通过一系列交互完成生成证明和验证。在实际应用中，零知识证明能实现证明者向验证者证明并使其相信自己知道或拥有某一消息，而证明过程不会向验证者泄漏任何关于被证明消息的信息。</p>
+<h1 id="可信执行环境"><a href="#可信执行环境" class="headerlink" title="可信执行环境"></a>可信执行环境</h1><p>第二类是以可信执行环境为代表的基于可信硬件的隐私计算技术</p>
+<h2 id="可信执行环境-1"><a href="#可信执行环境-1" class="headerlink" title="可信执行环境"></a><strong>可信执行环境</strong></h2><p>Trusted Execution Environment, TEE</p>
+<p>通过软硬件方法在中央处理器中构建一个安全的区域，保证其内部加载的程序和数据在机密性、完整性上得到保护。在TEE构建的安全区域中可对多方数据执行联合统计、联合查询、联合建模及预测等各种安全计算，保障数据在计算过程中的安全。可信执行环境与安全多方计算相比，具有更高的通用性、易用性和更优的性能，目前一些主流云厂商已提供支持TEE的云服务实例，后续机密计算（TEE）将成为公有云的标配，提高TEE对于侧信道攻击漏洞的鲁棒性，降低开发受信任应用以及方案集成的复杂性。</p>
+<h2 id="联邦学习"><a href="#联邦学习" class="headerlink" title="联邦学习"></a>联邦学习</h2><p>第三类是以联邦学习为代表的人工智能与隐私保护技术融合衍生的技术。</p>
+<h3 id="联邦学习-1"><a href="#联邦学习-1" class="headerlink" title="联邦学习"></a>联邦学习</h3><p>Federated Learning</p>
+<p>是实现在本地原始数据不出库的情况下，通过对中间加密 数据的流通与处理来完成多方联合的机器学习训练。联邦 学习结合机器学习、密码学，在构造算法时常应用同态加 密、差分隐私技术以及包括基于秘密分享、不经意传输、 混淆电路等密码学原理的各类多方安全计算协议和其它用 于保证隐私计算的密码学技术来提升安全性；联邦学习框 架也可与可信执行环境配合使用，提供安全性、应用性更 强的综合解决方案。联邦学习保障了联合AI模型在训练和 预测过程中的用户隐私和数据安全，广泛应用于联合建 模、联合预测等场景。 联邦学习当前工程实现接近可商用水平，未来会进一步提 升联邦学习的系统效率，增强隐私安全泄露的防御策略、 分布式计算优化等工程落地所面临的可能挑战，在AI领域 大规模应用。</p>
+<blockquote>
+<p><strong>未来十年， 95%企业将使用一种或多种隐私计算技术。</strong></p>
+</blockquote>
+]]></content>
+  </entry>
+  <entry>
+    <title>ps修图技巧</title>
+    <url>/posts/37d8.html</url>
+    <content><![CDATA[<!--摘要-->
 
+<span id="more"></span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<h1 id="肤色增白"><a href="#肤色增白" class="headerlink" title="肤色增白"></a>肤色增白</h1><ol>
+<li><p>混色器橙色色相提高</p>
+<img data-src="ps修图技巧/image-20230909125913042.png" alt="image-20230909125913042" style="zoom:67%;" />
+</li>
+<li><p>饱和度橙色、黄色下降</p>
+<img data-src="ps修图技巧/image-20230909130006828.png" alt="image-20230909130006828" style="zoom:67%;" />
+</li>
+<li><p>明亮度橙色、黄色提升</p>
+<img data-src="ps修图技巧/image-20230909130032048.png" alt="image-20230909130032048" style="zoom: 67%;" />
+</li>
+<li><p>室外拍摄有绿叶的话，拉一点自然饱和度肤色更加自然，红润</p>
+<img data-src="ps修图技巧/image-20230909130942609.png" alt="image-20230909130942609" style="zoom:67%;" /></li>
+</ol>
 ]]></content>
   </entry>
 </search>
