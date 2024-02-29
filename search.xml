@@ -10,6 +10,46 @@
 <h1 id="Docker安装"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker安装</h1><h1 id="Docker命令"><a href="#Docker命令" class="headerlink" title="Docker命令"></a>Docker命令</h1><h2 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h2><h2 id="容器命令"><a href="#容器命令" class="headerlink" title="容器命令"></a>容器命令</h2><h2 id="操作命令"><a href="#操作命令" class="headerlink" title="操作命令"></a>操作命令</h2><h1 id="Docker镜像"><a href="#Docker镜像" class="headerlink" title="Docker镜像"></a>Docker镜像</h1><h1 id="容器数据卷"><a href="#容器数据卷" class="headerlink" title="容器数据卷"></a>容器数据卷</h1><h1 id="DockerFile"><a href="#DockerFile" class="headerlink" title="DockerFile"></a>DockerFile</h1><h1 id="Docker网络原理"><a href="#Docker网络原理" class="headerlink" title="Docker网络原理"></a>Docker网络原理</h1><h1 id="IDEA整合Docker"><a href="#IDEA整合Docker" class="headerlink" title="IDEA整合Docker"></a>IDEA整合Docker</h1>]]></content>
   </entry>
   <entry>
+    <title>Hexo常用指令</title>
+    <url>/posts/d7d8.html</url>
+    <content><![CDATA[<!--记录一些常用指令-->
+
+<!--<span id="more"></span>-->
+
+<h4 id="上传指令"><a href="#上传指令" class="headerlink" title="上传指令"></a>上传指令</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g			<span class="comment">#生成</span></span><br><span class="line">hexo d			<span class="comment">#部署</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="首页不显示全文"><a href="#首页不显示全文" class="headerlink" title="首页不显示全文"></a>首页不显示全文</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
+
+<p>或者加入summary</p>
+<h4 id="建立新文章"><a href="#建立新文章" class="headerlink" title="建立新文章"></a>建立新文章</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new [layout] <span class="string">&quot;title&quot;</span></span><br><span class="line">hexo n blog名</span><br></pre></td></tr></table></figure>
+
+<h4 id="public文件夹"><a href="#public文件夹" class="headerlink" title="public文件夹"></a>public文件夹</h4><p>public文件夹是<code>hexo g</code>之后自动生成的文件夹，类似c++中编译之后的可执行文件</p>
+<p>因此文件放置在public中<code>hexo clean</code>后会被清空</p>
+<p>以images图片为例，正确做法是放在<strong>根目录source</strong>，或<strong>next主题source</strong>下</p>
+<p>这样<code>hexo g</code>之后就能直接自动生成到public&#x2F;images中</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>PyTorch理论学习记录</title>
+    <url>/posts/d75.html</url>
+    <content><![CDATA[<!--摘要-->
+
+<span id="more"></span>
+
+<h1 id="回归问题"><a href="#回归问题" class="headerlink" title="回归问题"></a>回归问题</h1><h2 id="常用求解器"><a href="#常用求解器" class="headerlink" title="常用求解器"></a>常用求解器</h2><p>sgd，rmsprop，Adam</p>
+<h2 id="损失loss"><a href="#损失loss" class="headerlink" title="损失loss"></a>损失loss</h2><p>$$<br>loss&#x3D;(观测值-测量值)^2<br>$$</p>
+<p>目标是求解尽可能准确的W和b，使得观测值接近y</p>
+<img data-src="/posts/d75/image-20230905111127451.png" class="" title="image-20230905111127451">
+
+<p>以线性函数为例<br>$$<br>loss&#x3D;\sum_{i}(w*x_i+b-y_i)^2\<br>minimize\enspace loss<br>$$</p>
+<h2 id="梯度下降计算过程"><a href="#梯度下降计算过程" class="headerlink" title="梯度下降计算过程"></a>梯度下降计算过程</h2><p>每一个参数都使用下列公式进行梯度下降计算（得到新的$$w和b$$）<br>$$<br>\theta_1&#x3D;\theta_0-\Delta(\theta_0)*lr\<br>\theta_1&#x3D;\theta_0-\frac{\nabla loss}{\nabla(\theta_0)}*lr<br>$$<br>核心为迭代过程，lr为学习率（learning rate&#x2F;step coefficient），相当于调整步长，常用0.001。</p>
+<blockquote>
+<p>Ps.$$\Delta表示变化量，\nabla表示微分$$</p>
+</blockquote>
+<h1 id="手写体识别问题"><a href="#手写体识别问题" class="headerlink" title="手写体识别问题"></a>手写体识别问题</h1><p>使用Normalize 使数据分布在0附近，识别率更高</p>
+]]></content>
+  </entry>
+  <entry>
     <title>配置PyTorch环境</title>
     <url>/posts/71fe.html</url>
     <content><![CDATA[<!--摘要-->
@@ -81,46 +121,6 @@
 </li>
 <li></li>
 </ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>Hexo常用指令</title>
-    <url>/posts/d7d8.html</url>
-    <content><![CDATA[<!--记录一些常用指令-->
-
-<!--<span id="more"></span>-->
-
-<h4 id="上传指令"><a href="#上传指令" class="headerlink" title="上传指令"></a>上传指令</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g			<span class="comment">#生成</span></span><br><span class="line">hexo d			<span class="comment">#部署</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="首页不显示全文"><a href="#首页不显示全文" class="headerlink" title="首页不显示全文"></a>首页不显示全文</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
-
-<p>或者加入summary</p>
-<h4 id="建立新文章"><a href="#建立新文章" class="headerlink" title="建立新文章"></a>建立新文章</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new [layout] <span class="string">&quot;title&quot;</span></span><br><span class="line">hexo n blog名</span><br></pre></td></tr></table></figure>
-
-<h4 id="public文件夹"><a href="#public文件夹" class="headerlink" title="public文件夹"></a>public文件夹</h4><p>public文件夹是<code>hexo g</code>之后自动生成的文件夹，类似c++中编译之后的可执行文件</p>
-<p>因此文件放置在public中<code>hexo clean</code>后会被清空</p>
-<p>以images图片为例，正确做法是放在<strong>根目录source</strong>，或<strong>next主题source</strong>下</p>
-<p>这样<code>hexo g</code>之后就能直接自动生成到public&#x2F;images中</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>PyTorch理论学习记录</title>
-    <url>/posts/d75.html</url>
-    <content><![CDATA[<!--摘要-->
-
-<span id="more"></span>
-
-<h1 id="回归问题"><a href="#回归问题" class="headerlink" title="回归问题"></a>回归问题</h1><h2 id="常用求解器"><a href="#常用求解器" class="headerlink" title="常用求解器"></a>常用求解器</h2><p>sgd，rmsprop，Adam</p>
-<h2 id="损失loss"><a href="#损失loss" class="headerlink" title="损失loss"></a>损失loss</h2><p>$$<br>loss&#x3D;(观测值-测量值)^2<br>$$</p>
-<p>目标是求解尽可能准确的W和b，使得观测值接近y</p>
-<img data-src="/posts/d75/image-20230905111127451.png" class="" title="image-20230905111127451">
-
-<p>以线性函数为例<br>$$<br>loss&#x3D;\sum_{i}(w*x_i+b-y_i)^2\<br>minimize\enspace loss<br>$$</p>
-<h2 id="梯度下降计算过程"><a href="#梯度下降计算过程" class="headerlink" title="梯度下降计算过程"></a>梯度下降计算过程</h2><p>每一个参数都使用下列公式进行梯度下降计算（得到新的$$w和b$$）<br>$$<br>\theta_1&#x3D;\theta_0-\Delta(\theta_0)*lr\<br>\theta_1&#x3D;\theta_0-\frac{\nabla loss}{\nabla(\theta_0)}*lr<br>$$<br>核心为迭代过程，lr为学习率（learning rate&#x2F;step coefficient），相当于调整步长，常用0.001。</p>
-<blockquote>
-<p>Ps.$$\Delta表示变化量，\nabla表示微分$$</p>
-</blockquote>
-<h1 id="手写体识别问题"><a href="#手写体识别问题" class="headerlink" title="手写体识别问题"></a>手写体识别问题</h1><p>使用Normalize 使数据分布在0附近，识别率更高</p>
 ]]></content>
   </entry>
   <entry>
@@ -210,6 +210,28 @@
 </li>
 <li><p>复制零件：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CTRL+鼠标左键</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>ps修图技巧</title>
+    <url>/posts/37d8.html</url>
+    <content><![CDATA[<!--摘要-->
+
+<span id="more"></span>
+
+<h1 id="肤色增白"><a href="#肤色增白" class="headerlink" title="肤色增白"></a>肤色增白</h1><ol>
+<li><p>混色器橙色色相提高</p>
+<img data-src="ps修图技巧/image-20230909125913042.png" alt="image-20230909125913042" style="zoom:67%;" />
+</li>
+<li><p>饱和度橙色、黄色下降</p>
+<img data-src="ps修图技巧/image-20230909130006828.png" alt="image-20230909130006828" style="zoom:67%;" />
+</li>
+<li><p>明亮度橙色、黄色提升</p>
+<img data-src="ps修图技巧/image-20230909130032048.png" alt="image-20230909130032048" style="zoom: 67%;" />
+</li>
+<li><p>室外拍摄有绿叶的话，拉一点自然饱和度肤色更加自然，红润</p>
+<img data-src="ps修图技巧/image-20230909130942609.png" alt="image-20230909130942609" style="zoom:67%;" /></li>
 </ol>
 ]]></content>
   </entry>
@@ -452,28 +474,6 @@
 <blockquote>
 <p><strong>未来十年， 95%企业将使用一种或多种隐私计算技术。</strong></p>
 </blockquote>
-]]></content>
-  </entry>
-  <entry>
-    <title>ps修图技巧</title>
-    <url>/posts/37d8.html</url>
-    <content><![CDATA[<!--摘要-->
-
-<span id="more"></span>
-
-<h1 id="肤色增白"><a href="#肤色增白" class="headerlink" title="肤色增白"></a>肤色增白</h1><ol>
-<li><p>混色器橙色色相提高</p>
-<img data-src="ps修图技巧/image-20230909125913042.png" alt="image-20230909125913042" style="zoom:67%;" />
-</li>
-<li><p>饱和度橙色、黄色下降</p>
-<img data-src="ps修图技巧/image-20230909130006828.png" alt="image-20230909130006828" style="zoom:67%;" />
-</li>
-<li><p>明亮度橙色、黄色提升</p>
-<img data-src="ps修图技巧/image-20230909130032048.png" alt="image-20230909130032048" style="zoom: 67%;" />
-</li>
-<li><p>室外拍摄有绿叶的话，拉一点自然饱和度肤色更加自然，红润</p>
-<img data-src="ps修图技巧/image-20230909130942609.png" alt="image-20230909130942609" style="zoom:67%;" /></li>
-</ol>
 ]]></content>
   </entry>
 </search>
